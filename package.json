@@ -1,5 +1,5 @@
 {
-  "name": "shenzhen",
+  "name": "vue-highcharts-element-ui",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,10 @@
   },
   "dependencies": {
     "core-js": "^3.6.5",
+    "dayjs": "^1.10.7",
+    "element-ui": "^2.15.6",
+    "highcharts": "^9.3.2",
+    "highcharts-vue": "^1.4.0",
     "vue": "^2.6.11"
   },
   "devDependencies": {

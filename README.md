@@ -1,4 +1,4 @@
-# shenzhen
+# vue-highcharts-element-ui
 
 ## Project setup
 ```
