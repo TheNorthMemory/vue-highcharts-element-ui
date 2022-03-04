@@ -8,7 +8,7 @@
   >
     <el-table-column
       prop="jzrq"
-      label="截至日期"
+      :label="dict.jzrq"
       sortable
       fixed
       width="100"
@@ -16,35 +16,35 @@
     </el-table-column>
     <el-table-column
       prop="jzsj"
-      label="截止时间"
+      :label="dict.jzsj"
       sortable
       width="100"
     >
     </el-table-column>
     <el-table-column
       prop="xcwzzgrzsl"
-      label="现存无症状感染者数量"
+      :label="dict.xcwzzgrzsl"
       sortable
       width="200"
     >
     </el-table-column>
     <el-table-column
       prop="xzwzzgrzsl"
-      label="新增无症状感染者数量"
+      :label="dict.xzwzzgrzsl"
       sortable
       width="200"
     >
     </el-table-column>
     <el-table-column
       prop="xcwzzgrzzjwsrdsl"
-      label="现存无症状感染者中境外输入的数量"
+      :label="dict.xcwzzgrzzjwsrdsl"
       sortable
       width="250"
     >
     </el-table-column>
     <el-table-column
       prop="lyd"
-      label="来源地"
+      :label="dict.lyd"
       align="right"
       sortable
     >
@@ -55,6 +55,9 @@
 <script>
   export default {
     props: {
+      dict: {
+        type: Object
+      },
       id: {
         type: String
       },

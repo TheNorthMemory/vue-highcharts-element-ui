@@ -22,7 +22,7 @@
     </el-row>
     <el-row type="flex" justify="center">
       <el-col :span="22">
-        <Table :id="id" :table="table" />
+        <Table :id="id" :dict="dict" :table="table" />
       </el-col>
     </el-row>
   </div>
@@ -55,6 +55,14 @@ export default {
         '-1': '上7天',
       },
       id: 'opendata',
+      dict: {
+        jzrq            : '截至日期',
+        jzsj            : '截至时间',
+        xzwzzgrzsl      : '新增无症状感染者数量',
+        lyd             : '来源地',
+        xcwzzgrzsl      : '现存无症状感染者数量',
+        xcwzzgrzzjwsrdsl: '现存无症状感染者中境外输入的数量',
+      },
       table: [],
       option: {
           chart: {
@@ -83,14 +91,6 @@ export default {
   },
   methods: {
     toggle() {
-      const dict = {
-        jzrq            : '截至日期',
-        jzsj            : '截至时间',
-        xzwzzgrzsl      : '新增无症状感染者数量',
-        lyd             : '来源地',
-        xcwzzgrzsl      : '现存无症状感染者数量',
-        xcwzzgrzzjwsrdsl: '现存无症状感染者中境外输入的数量',
-      }
       const defs = [
         {"xcwzzgrzsl":"11","jzsj":"24时","lyd":"-","xcwzzgrzzjwsrdsl":"-","jzrq":"2022/1/13","xzwzzgrzsl":"0"},
         {"xcwzzgrzsl":"9","jzsj":"24时","lyd":"-","xcwzzgrzzjwsrdsl":"-","jzrq":"2022/1/14","xzwzzgrzsl":"0"},
@@ -123,7 +123,7 @@ export default {
       const keys = ['xcwzzgrzsl', 'xzwzzgrzsl', 'xcwzzgrzzjwsrdsl']
       const toNumeric = n => '-' === n ? 0 : +n
       const series = keys.map(n => {
-        const name = dict[n]
+        const name = this.dict[n]
         const data = table.map(r => toNumeric(r[n]))
         return {name, data}
       })
